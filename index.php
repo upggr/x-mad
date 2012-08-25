@@ -44,7 +44,7 @@
 
 <li><a class="musiccovers" href="#">Music</a>
 <ul class="sub_menu">
-    <li><a   href="#Top Music">Top Seeded Music</a></li>
+    <li><a  class="recents" href="#Top Music">Top Seeded Music</a></li>
 </ul>
 </li>
 

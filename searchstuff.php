@@ -25,6 +25,11 @@ if( $_REQUEST["searchq"] )
 	 $urlconstructor2 = '';	 
  }
  
+  if ($searchq == "Top Seeded Music") {
+	 $urlconstructor = 'http://thepiratebay.se/top/101';
+	 $urlconstructor2 = '';	 
+ }
+ 
   if ($searchq == "Top Seeded TV Shows") {
 	 $urlconstructor = 'http://thepiratebay.se/top/205';
 	 $urlconstructor2 = '';	 
