@@ -49,24 +49,6 @@ $(document).ready(function(){
 		 $('html, body').animate({scrollTop:0}, 'slow');
     });
 		
-	    $('.musiccovers').live('click', function() {
-        $('.helper').empty();
-		$('#message').empty();
-		$(".helper").load("getmusiccovers.php");
-
-    });
-	
-		$('.videocovers').live('click', function() {
-        $('.helper').empty();
-		$('#message').empty();
-		$(".helper").load("getmoviecovers.php");
-    });
-	
-		$('.videoscificovers').live('click', function() {
-        $('.helper').empty();
-		$('#message').empty();
-		$(".helper").load("getscifimoviecovers.php");
-	});	 
 	
 		$('.itunescontent').live('click', function() {
         $('.helper').empty();
