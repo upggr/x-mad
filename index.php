@@ -15,7 +15,7 @@
 <body>
 <?php require_once('functions.php'); ?>
 
-<div id="header"><a href="http://www.x-mad.com">Home</a>
+<div id="header" class="clickable" url="http://www.x-mad.com">
 <div id="social">
 <?php require_once('customize/socialbuttonstop.php'); ?>
 
@@ -36,6 +36,7 @@
   </li>
 <li><a class="videocovers" href="#">Video</a>
 <ul class="sub_menu">
+	<li><a class="videoscificovers" href="#Science Fiction">Science Fiction</a></li>
     <li><a class="recents" href="#Top Movies">Top Seeded Movies</a></li>
     <li><a  class="recents" href="#Top TV Shows">Top Seeded TV Shows</a></li>
     <li><a  class="recents" href="#Top Porn Movies">Top Seeded Porn Movies</a></li>
@@ -55,11 +56,13 @@
     <li><a  class="recents" href="#Top OSX Applications">Top Seeded OSX Applications</a></li>
     </ul>
     
-  <li><a href="#">Games</a>
+  <li><a href="#" >Games</a>
 <ul class="sub_menu">   
     <li><a  class="recents" href="#Top PC Games">Top Seeded PC Games</a></li>
     </ul>
 </li>
+
+  <li><a href="#" class="itunescontent" url="itunes.apple.com/us/rss/topalbums/limit=100/xml">Test</a></li>
 </ul><!-- close menu -->
 
 

@@ -6,4 +6,5 @@ while ( $line = fgets($f, 1000) ) {
 echo '<li><a class="recents" href="#'.$line.'">'.$line.'</a></li>';
 }
 }
+
 ?>

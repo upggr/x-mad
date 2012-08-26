@@ -44,28 +44,47 @@ $(document).ready(function(){
 
     $('.recents').live('click', function() {
         $("#field").val($(this).html());
+		$('.helper').empty(2000);
 		$('#submit').trigger('click');
 		 $('html, body').animate({scrollTop:0}, 'slow');
-
     });
-	
-	
+		
 	    $('.musiccovers').live('click', function() {
         $('.helper').empty();
 		$('#message').empty();
-		 $(".helper").load("getmusiccovers.php");
+		$(".helper").load("getmusiccovers.php");
 
     });
 	
-	
-		    $('.videocovers').live('click', function() {
+		$('.videocovers').live('click', function() {
         $('.helper').empty();
 		$('#message').empty();
-		 $(".helper").load("getmoviecovers.php");
-
+		$(".helper").load("getmoviecovers.php");
+    });
+	
+		$('.videoscificovers').live('click', function() {
+        $('.helper').empty();
+		$('#message').empty();
+		$(".helper").load("getscifimoviecovers.php");
+	});	 
+	
+		$('.itunescontent').live('click', function() {
+        $('.helper').empty();
+		$('#message').empty();
+		var itunesurl1 = "itunesrss.php?url=";
+		var itunesurl2 = $(this).attr("url"); 
+		var itunesurl3 = itunesurl1 + itunesurl2
+		$(".helper").load(itunesurl3);	 
     });
 	
 	
+	
+	$("div.clickable").click(
+function()
+{
+    window.location = $(this).attr("url");
+});
+
 var seen = {}; $('a').each(function() {var txt = $(this).text(); if (seen[txt])$(this).remove(); else seen[txt] = true;});
 
 
@@ -79,6 +98,8 @@ var seen = {}; $('a').each(function() {var txt = $(this).text(); if (seen[txt])$
 // 		}, 10);
 
 });
+
+
 
 $(function(){
    $("ul.dropdown li").hover(function(){
