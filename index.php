@@ -34,35 +34,8 @@
     </form>
   </div> 
   </li>
-<li><a class="videocovers" href="#">Video</a>
-<ul class="sub_menu">
-	<li><a class="videoscificovers" href="#Science Fiction">Science Fiction</a></li>
-    <li><a class="recents" href="#Top Movies">Top Seeded Movies</a></li>
-    <li><a  class="recents" href="#Top TV Shows">Top Seeded TV Shows</a></li>
-    <li><a  class="recents" href="#Top Porn Movies">Top Seeded Porn Movies</a></li>
-</ul>
-</li>
+<?php require_once('menu.php'); ?>
 
-<li><a class="musiccovers" href="#">Music</a>
-<ul class="sub_menu">
-    <li><a  class="recents" href="#Top Music">Top Seeded Music</a></li>
-</ul>
-</li>
-
-
- <li><a href="#">Applications</a>
-<ul class="sub_menu">   
-    <li><a  class="recents" href="#Top Windows Applications">Top Seeded Windows Applications</a></li>
-    <li><a  class="recents" href="#Top OSX Applications">Top Seeded OSX Applications</a></li>
-    </ul>
-    
-  <li><a href="#" >Games</a>
-<ul class="sub_menu">   
-    <li><a  class="recents" href="#Top PC Games">Top Seeded PC Games</a></li>
-    </ul>
-</li>
-
-  <li><a href="#" class="itunescontent" url="itunes.apple.com/us/rss/topalbums/limit=100/xml">Test</a></li>
 </ul><!-- close menu -->
 
 

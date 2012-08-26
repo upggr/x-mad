@@ -77,7 +77,14 @@ $(document).ready(function(){
 		$(".helper").load(itunesurl3);	 
     });
 	
-	
+			$('.itunescontent2').live('click', function() {
+        $('.helper').empty();
+		$('#message').empty();
+		var itunesurl1 = "itunesrss2.php?url=";
+		var itunesurl2 = $(this).attr("url"); 
+		var itunesurl3 = itunesurl1 + itunesurl2
+		$(".helper").load(itunesurl3);	 
+    });
 	
 	$("div.clickable").click(
 function()

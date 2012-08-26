@@ -315,7 +315,7 @@ margin-bottom:60px;
 .musicposter {
 width:130px;
 height:130px;
-background-repeat:inherit;
+background-repeat:no-repeat;
 background-size: 100%;
 }
 
@@ -324,6 +324,6 @@ width:130px;
 height:130px;
 float:left;
 margin:10px;
-margin-bottom:60px;
+margin-bottom:40px;
 
 }
