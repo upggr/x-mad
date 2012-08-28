@@ -59,6 +59,13 @@ $(document).ready(function(){
 		$(".helper").load(itunesurl3);	 
     });
 	
+		$('.recent-tvshows').live('click', function() {
+        $('.helper').empty();
+		$('#message').empty();
+		var eztvurl = "eztvit.php";
+		$("#message").load(eztvurl);	 
+    });
+	
 			$('.itunescontent2').live('click', function() {
         $('.helper').empty();
 		$('#message').empty();

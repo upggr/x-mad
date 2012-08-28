@@ -4,6 +4,7 @@
     <li><a href="#" class="itunescontent" url="itunes.apple.com/gb/rss/topvideorentals/limit=100/xml">Top UK Movie Rentals</a></li>      
 	<li><a class="videoscificovers" href="#Science Fiction">Science Fiction</a></li>
     <li><a class="recents" href="#Top Movies">Top Seeded Movies</a></li>
+    <li><a class="recent-tvshows" href="#Latest-TV-Shows">Todays TV Shows</a></li>
     <li><a  class="recents" href="#Top TV Shows">Top Seeded TV Shows</a></li>
     <li><a  class="recents" href="#Top Porn Movies">Top Seeded Porn Movies</a></li>
 </ul>
