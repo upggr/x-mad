@@ -20,4 +20,4 @@
 
 <h2>Sources</h2>
 
-<p>currently x-mad spiders <a href="thepiratebay.se" target="_blank">thepiratebay.se</a> and <a href="fenopy.eu" target="_blank">fenopy.eu</a> for magnet links. We also spider <a href="blockbuster.co.uk" target="_blank">blockbuster.co.uk</a> for movie posters and <a href="bbc.co.uk" target="_blank">bbc.co.uk</a> for top music songs. New sources will be added every day</p>
+<p>currently x-mad spiders <a href="thepiratebay.se" target="_blank">thepiratebay.se</a>, <a href="http://eztv.it" target="_blank">eztv.it</a> and <a href="fenopy.eu" target="_blank">fenopy.eu</a> for magnet links. We also spider <a href="blockbuster.co.uk" target="_blank">blockbuster.co.uk</a> for movie posters and <a href="bbc.co.uk" target="_blank">bbc.co.uk</a> for top music songs. New sources will be added every day</p>
