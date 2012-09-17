@@ -83,7 +83,7 @@ function()
     window.location = $(this).attr("url");
 });
 
-var seen = {}; $('a').each(function() {var txt = $(this).text(); if (seen[txt])$(this).remove(); else seen[txt] = true;});
+// var seen = {}; $('a').each(function() {var txt = $(this).text(); if (seen[txt])$(this).remove(); else seen[txt] = true;});
 
 
 

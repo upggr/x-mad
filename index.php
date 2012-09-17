@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<?php require_once('functions.php'); ?>
+<?php include('functions.php'); ?>
 
 <div id="header" class="clickable" url="http://www.x-mad.com">
 <div id="social">
@@ -64,15 +64,6 @@
 
     </ul>
     </div>
-
-<h3>Browse content</h3>
-
-    <div class="navcontainer">
-    <ul>
-    <li><a class='recents' href="#Top Torrents">Top Seeded Files</a></li>
-
-    </ul>
-    </div>
     
     <h3>Download Software</h3>
 
@@ -88,7 +79,7 @@
 
     <div class="navcontainer">
     <ul>
-       <?php getrecents() ?>
+       <?php readerecents() ?>
     </ul>
     </div>
 
