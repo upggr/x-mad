@@ -8,7 +8,7 @@ if( $_REQUEST["searchq"] )
    echo "<h2>Download ". $searchq."</h2>";
    echo "<br>";
    
-writerecents($searchq); 
+//writerecents($searchq); 
 	
  $urlconstructor = 'http://thepiratebay.se/search/'.$searchq.'/0/7/0';
  $urlconstructor = str_replace(" ", "+", $urlconstructor);
