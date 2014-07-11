@@ -51,7 +51,7 @@ if( $_REQUEST["searchq"] )
  $urlconstructor2 = str_replace(" ", "+", $urlconstructor);
  
 scrapmagnetsite($urlconstructor);
-scrapmagnetsite($urlconstructor2);
+//scrapmagnetsite($urlconstructor2);
 
     
 }
