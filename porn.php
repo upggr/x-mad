@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,24 +24,7 @@
 
 </div>
 
-  
-
-<ul class="dropdown"><!-- menu -->
-<li> <div id="searchContainer">
-    <form method="get" id="target">
-      <input type="text" name="download" id="field" />
-      <div id="delete"><span id="x">x</span></div>
-      <input type="submit" id="submit" value="Search" name="search"/>
-    </form>
-  </div> 
-  </li>
-<?php generateMenu(); ?>
-<li> <a href="porn.php">Porn</a></li>
-<li> <a href="#">?</a>
-<ul class="sub_menu"><li> <a href="bitcoins.php">Donate</a></li>
-<li> <a href="http://x-mad.com/readlatest.php">Latest Searches</a></li></ul>
-</li>
-</ul><!-- close menu -->
+ 
 
 
 <div id="content"><!-- content -->
@@ -49,8 +33,15 @@
         <div id="progressbar"></div>
         <div id="message"></div>
       </div>
-<div class="helper"><?php require_once('customize/homepage.php'); ?>
-</div>
+ <?php
+ 
+ if (isset($_GET["graburl"])){
+        readpornxml($_GET["graburl"]);
+    }
+	else 
+	readpornxml('http://www.porndig.com/rss/top/videos.xml');
+
+ ?>
 
 
 
@@ -60,33 +51,17 @@
 
 <div id="sidebar"><!-- sidebar -->
 
-<h3>Socialize</h3>
+<h3>Porn Categories</h3>
 
     <div class="navcontainer">
     <ul>
-    <li><?php include('customize/social.php'); ?></li>
+  <?php  fetchxmllinksforporn('http://www.porndig.com/rss/'); ?>
 
     </ul>
     </div>
     
-    <h3>Download Software</h3>
-
-    <div class="navcontainer">
-    <ul>
-    <li>You need a torrent client to download</li>
-	<li><a href="http://www.utorrent.com/utorrent-plus/index/frmrvh" target="_blank"><img src="images/utorrent.png" alt="Download utorrent client" width="60" height="60" />      </a><a href="http://cf1.vuze.com/files/Vuze_Installer.exe" target="_blank"><img src="images/vuze.png" alt="Download vuze client" width="60" height="60" />        </a></li>
-    </ul>
-    </div>
-    
-  <!--   start recents
-<h3>Recent Searches</h3>
-
-    <div class="navcontainer">
-    <ul>
-       <?php //readerecents() ?>
-    </ul>
-    </div>
-<!--- end recents -->
+  
+ 
 </div>
 <!--- end sidebar -->
 
@@ -98,3 +73,8 @@
 <a href="https://github.com/upggr/x-mad" target="new"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub">            </a>
 </body>
 </html>
+
+
+
+
+ 

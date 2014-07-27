@@ -35,6 +35,41 @@ foreach($searches->children() as $child)
 	}
 }
 
+
+function readpornxml($url){
+ 	$searches = simplexml_load_file($url) 
+       or die("Error: Cannot create object");
+	foreach($searches->channel->item as $chan) {  
+    $thetitle = $chan->title;
+$codeblock = $chan->description;     
+ if(preg_match('/src="([^"]+)"/', $codeblock, $match2))  ; 
+   $theimage = $match[1];    
+  // echo $theimage;
+ if(preg_match('~iframe.*src="([^"]*)"~', $codeblock, $match2))  ; 
+	 $thevideo = $match2[1];  	
+	 echo '<iframe src="'.$thevideo.'"></iframe>';
+}  
+}
+	   	   
+function fetchxmllinksforporn($target) {
+$html = file_get_contents($target);
+$dom = new DOMDocument();
+@$dom->loadHTML($html);
+$xpath = new DOMXPath($dom);
+$hrefs = $xpath->evaluate("/html/body//a");
+for ($i = 0; $i < $hrefs->length; $i++) {
+
+       $href = $hrefs->item($i);
+       $url = $href->getAttribute('href');
+	  if ((strpos($url,'xml') !== false)) { 
+
+       echo '<li><a href="porn.php?graburl='.$url.'">'.basename($url,".xml").'</a></li>';
+	  }
+}
+
+}
+
+
 function writerecents($searchq) {
 $date = new DateTime();
 $dateunixstyle = $date->format('U');  
