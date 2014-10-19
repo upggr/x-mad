@@ -1,6 +1,10 @@
 <h1>Welcome to the x-mad search engine</h1> 
 
-<h2>&nbsp;</h2>
+<h2>UPDATE </h2>
+<p>Sorry but I have to shorten my urls to hide the magnets from this website. Whenever you click on a magnet link you will have to wait on the next page for 5seconds, then &quot;skip ad&quot; and you will be rolling. Just do not be tempted to click any of the ads! they are just ads!:)</p>
+<p>&nbsp;</p>
+<h2>NEW PROJECT </h2>
+<p>Using the x-mad.com engine I am building <a href="http://onlinemovies.pw">onlinemovies.pw</a> This is a wordpress theme and functionality is quite simple. You just apply the theme and you are done!!! every 10 minutes a new movie is spidered from imdb and entered in your worpdress database with everything. For all the movies the x-mad engine provides the results from the magnet sites we spider :) Source code to be released soon!</p>
 <h2>UPDATE </h2>
 <p>Looks like everyone is looking for porn here.. So a new section (porn) has been added. Like always, nothing is stored on this server, just fresh content with no ads. Visit the <a href="http://www.x-mad.com/porn.php">porn section</a> now!  :)</p>
 <h2>Extend / Open Source</h2>

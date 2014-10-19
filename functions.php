@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(E_ALL); 
 function gettopsharedfiles() {
 $xml = simplexml_load_file("topstuff.xml");
 foreach ($xml->toplist as $toplist) {
@@ -74,8 +76,8 @@ function writerecents($searchq) {
 }
 
 	function scrapmagnetsite($theurl) {
-		$var = fread_url($theurl);  
-	$var =	gzdecode(file_get_contents($theurl));
+$var = fread_url($theurl);  
+//	$var =	gzdecode2(file_get_contents($theurl));
 
 	//	echo $var;
 	//	echo    $theurl;
@@ -85,6 +87,7 @@ function writerecents($searchq) {
     $matches = $matches[1];
 //	print_r($matches);
     $list = array();
+	$i =0;
     foreach($matches as $var)
     {    
 	
@@ -101,8 +104,17 @@ function writerecents($searchq) {
 	$dtitle = str_replace("%40", "@", $dtitle);
 	$dtitle = str_replace("%2", "-", $dtitle);
 	$dtitle = substr($dtitle, 0, -3);
-	
-   echo "<a href='".$dtarget."' title='Download ".$dtitle." via magnet link'>".$dtitle."</a><br>"; 
+	if ($i < 8) {
+	$sUrl = file_get_contents('http://api.adf.ly/api.php?key=9a283dafe534bddccc556153a37ed678&uid=1608068&advert_type=int&domain=go.x-mad.com&url='.$dtarget.'');
+ 
+   echo '<a href="'.$sUrl.'" title="Download '.$dtitle.' via magnet link">'.$dtitle.'</a><br>'; 
+	}
+	else {
+		echo '<a href="'.$dtarget.'" title="Download '.$dtitle.' via magnet link">'.$dtitle.'</a><br>'; 
+	}
+// echo '<a href="http://api.adf.ly/api.php?key=9a283dafe534bddccc556153a37ed678&uid=1608068&advert_type=int&domain=go.x-mad.com&url='.$dtarget.'" title="Download '.$dtitle.' via magnet link">'.$dtitle.'</a><br>';
+ 
+$i++;
     }
 	else {
 	//	echo '?';
@@ -116,12 +128,15 @@ function writerecents($searchq) {
             $ch = curl_init();
             $user_agent = "Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
+          //  curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
 			curl_setopt($ch, CURLOPT_ENCODING , "gzip");
             curl_setopt( $ch, CURLOPT_HTTPGET, 1 );
             curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION , 1 );
-            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION , 1 );
+				if (!ini_get('safe_mode'))
+		{
+	//		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+	//		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		}
             curl_setopt( $ch, CURLOPT_URL, $url );
             curl_setopt( $ch, CURLOPT_REFERER, $ref );
             curl_setopt ($ch, CURLOPT_COOKIEJAR, 'cookie.txt');
@@ -148,12 +163,16 @@ function writerecents($searchq) {
             $ch = curl_init();
             $user_agent = "Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3";
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
+   //         curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
 			curl_setopt($ch, CURLOPT_ENCODING , $encoding);
-            curl_setopt( $ch, CURLOPT_HTTPGET, 1 );
-            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION , 1 );
-            curl_setopt( $ch, CURLOPT_FOLLOWLOCATION , 1 );
+            curl_setopt( $ch, CURLOPT_HTTPGET, true );
+            curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+				if (!ini_get('safe_mode'))
+		{
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		}
+
             curl_setopt( $ch, CURLOPT_URL, $url );
             curl_setopt( $ch, CURLOPT_REFERER, $ref );
             curl_setopt ($ch, CURLOPT_COOKIEJAR, 'cookie.txt');
@@ -201,8 +220,9 @@ function writerecents($searchq) {
     }
 	}
 	}
+
 	
-function gzdecode($data) { 
+function gzdecode2($data) { 
   $len = strlen($data); 
   if ($len < 18 || strcmp(substr($data,0,2),"\x1f\x8b")) { 
     return null;  // Not GZIP format (See RFC 1952) 
@@ -249,6 +269,7 @@ function gzdecode($data) {
     $filename = substr($data,$headerlen,$filenamelen); 
     $headerlen += $filenamelen + 1; 
   } 
+
 
   $commentlen = 0; 
   $comment = ""; 
