@@ -64,28 +64,12 @@ for ($i = 0; $i < $hrefs->length; $i++) {
 }
 
 
-function writerecents($searchq) {
-//$date = new DateTime();
-//$dateunixstyle = $date->format('U');  
-//$xml = simplexml_load_file("latestsearches.xml");  
-//$sxe = new SimpleXMLElement($xml->asXML()); 
-//$search = $sxe->addChild("search"); 
-//$search->addChild("searchstring", $searchq); 
-//$search->addChild("timestamp", $dateunixstyle); 
-//$sxe->asXML("latestsearches.xml"); 
-}
-
 	function scrapmagnetsite($theurl) {
 $var = fread_url($theurl);  
-//	$var =	gzdecode2(file_get_contents($theurl));
-
-	//	echo $var;
-	//	echo    $theurl;
     preg_match_all ("/a[\s]+[^>]*?href[\s]?=[\s\"\']+".
                     "(.*?)[\"\']+.*?>"."([^<]+|.*?)?<\/a>/", 
                     $var, $matches);   												    
     $matches = $matches[1];
-//	print_r($matches);
     $list = array();
 	$i =0;
     foreach($matches as $var)
@@ -105,7 +89,7 @@ $var = fread_url($theurl);
 	$dtitle = str_replace("%2", "-", $dtitle);
 	$dtitle = substr($dtitle, 0, -3);
 	if ($i < 8) {
-	$sUrl = file_get_contents('http://api.adf.ly/api.php?key=9a283dafe534bddccc556153a37ed678&uid=1608068&advert_type=int&domain=go.x-mad.com&url='.$dtarget.'');
+			$sUrl = $dtarget;
  
    echo '<a href="'.$sUrl.'" title="Download '.$dtitle.' via magnet link">'.$dtitle.'</a><br>'; 
 	}
@@ -177,7 +161,7 @@ $i++;
             curl_setopt( $ch, CURLOPT_REFERER, $ref );
             curl_setopt ($ch, CURLOPT_COOKIEJAR, 'cookie.txt');
             $html = curl_exec($ch);
-            curl_close($ch);
+            curl_close($ch); 
 		
         }
         else{
